@@ -1,11 +1,5 @@
 <template>
-  <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Main</router-link>|
-      <router-link to="/repository">Repository</router-link>
-    </div>-->
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <style lang="scss">
@@ -21,7 +15,7 @@
 
 html,
 body,
-#app {
+#root {
   min-height: 100%;
 }
 

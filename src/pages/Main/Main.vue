@@ -21,7 +21,9 @@
 <script>
 // @ is an alias to /src
 import api from '@/services/api';
-import { Container, Form, SubmitButton, StyledUl } from './styles';
+import Container from '@/components/Container';
+
+import { Form, SubmitButton, StyledUl } from './styles';
 
 export default {
   name: 'home',
@@ -55,7 +57,7 @@ export default {
       this.loading = false;
     },
   },
-  mounted: function() {
+  mounted() {
     const repositories = localStorage.getItem('repositories');
 
     if (repositories) {
@@ -63,7 +65,7 @@ export default {
     }
   },
   watch: {
-    repositories: function(newRepositories, oldRepositories) {
+    repositories(newRepositories, oldRepositories) {
       if (newRepositories !== oldRepositories) {
         localStorage.setItem('repositories', JSON.stringify(newRepositories));
       }
